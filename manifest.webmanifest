@@ -1,0 +1,10 @@
+{
+  "name":"Auron Vault",
+  "short_name":"Auron Vault",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#080a0d",
+  "theme_color":"#080a0d",
+  "lang":"de",
+  "description":"Lokaler, verschlüsselter Passwort-Tresor."
+}
