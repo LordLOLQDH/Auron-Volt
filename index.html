@@ -1,54 +1,23 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f5f7fb">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Auron Vault">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auron Vault</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="style.css?v=2">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;background:#f4f5f7;color:#17191d}body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.login{width:100%;max-width:380px;background:#fff;border:1px solid #e1e3e7;border-radius:20px;padding:32px 24px;box-shadow:0 12px 35px rgba(0,0,0,.08)}.logo{width:58px;height:58px;margin:0 auto 20px;border-radius:17px;background:#17191d;color:#fff;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800}.login h1{margin:0;text-align:center;font-size:27px}.subtitle{margin:8px 0 28px;text-align:center;color:#737983;font-size:14px}label{display:block;margin-bottom:8px;font-size:14px;font-weight:600}input{width:100%;padding:14px;border:1px solid #d7d9de;border-radius:12px;background:#fff;color:#17191d;font-size:16px;outline:none}input:focus{border-color:#17191d}button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:12px;background:#17191d;color:#fff;font-size:16px;font-weight:700}
+</style>
 </head>
 <body>
-<main class="app" id="app">
-<section id="setup" class="screen hidden">
-<div class="brand"><div class="logo">A</div><h1>Auron Vault</h1><p class="muted">Dein privater Passwort-Tresor</p></div>
-<form id="setupForm" class="card">
-<label>Master-Passwort<input id="setupPassword" type="password" minlength="12" autocomplete="new-password" required></label>
-<label>Master-Passwort wiederholen<input id="setupPassword2" type="password" minlength="12" autocomplete="new-password" required></label>
-<button type="submit">Tresor erstellen</button>
-<p class="hint">Mindestens 12 Zeichen. Dein Master-Passwort wird nicht gespeichert.</p>
+<main class="login">
+<div class="logo">A</div>
+<h1>Auron Vault</h1>
+<p class="subtitle">Passwort-Tresor</p>
+<form>
+<label for="password">Passwort</label>
+<input id="password" type="password" placeholder="Passwort eingeben">
+<button type="button">Entsperren</button>
 </form>
-</section>
-<section id="unlock" class="screen hidden">
-<div class="brand"><div class="logo">A</div><h1>Auron Vault</h1><p class="muted">Entsperre deinen privaten Tresor</p></div>
-<form id="unlockForm" class="card">
-<label>Master-Passwort<input id="unlockPassword" type="password" autocomplete="current-password" required></label>
-<button type="submit">Entsperren</button>
-<p id="unlockError" class="error"></p>
-</form>
-</section>
-<section id="vault" class="screen hidden">
-<header class="topbar"><div><strong>Auron Vault</strong><span id="count" class="muted"></span></div><button id="lockBtn" class="iconBtn" aria-label="Sperren">🔒</button></header>
-<div class="search"><input id="search" placeholder="Passwort suchen..." autocomplete="off"></div>
-<div id="entries" class="entries"></div>
-<button id="addBtn" class="fab" aria-label="Eintrag hinzufügen">＋</button>
-</section>
 </main>
-<dialog id="entryDialog">
-<form method="dialog" id="entryForm" class="dialogCard">
-<div class="dialogHead"><h2 id="dialogTitle">Neuer Eintrag</h2><button value="cancel" class="iconBtn">×</button></div>
-<input type="hidden" id="entryId">
-<label>Name<input id="entryName" required maxlength="120"></label>
-<label>Website<input id="entryUrl" type="url" placeholder="https://example.com" maxlength="500"></label>
-<label>Benutzername<input id="entryUser" autocomplete="off" maxlength="200"></label>
-<label>Passwort<div class="passwordRow"><input id="entryPass" type="password" autocomplete="new-password" required><button type="button" id="generateBtn">Generieren</button></div></label>
-<label>Notiz<textarea id="entryNote" maxlength="2000"></textarea></label>
-<div class="actions"><button value="cancel" class="secondary">Abbrechen</button><button id="saveEntryBtn" value="default">Speichern</button></div>
-</form>
-</dialog>
-<script src="app.js?v=2"></script>
 </body>
 </html>
